@@ -39,11 +39,16 @@
     电话验证码
 # 如何优化爬虫
     抓取解析存储三模块相互独立，逐步调用
-
-# 分布式爬虫的优势
+ 分布式爬虫的优势
     爬虫任务量是相通的
     爬虫的数量可以随意的加大和减少
-  
-# cookie的设置
+ cookie的设置
     响应头的set-Cookie
     javascript代码设置成cookie
+# mysql
+    数据库定义语言：对数据库，表，列等结构进行改变的语句 关键字create,alter,drop
+    数据库查询语言：用于查询数据库中表记录的语言。 关键字select,from,where,order by等
+    数据操作语言：对表中的记录进行添加，删除，修改操作的语句。关键字delete,insert,update
+    数据控制语言：用于定义数据库的访问权限和安全级别。 关键字grant revoke
+# pymysql
+  
