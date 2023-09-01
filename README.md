@@ -52,4 +52,31 @@
     数据操作语言：对表中的记录进行添加，删除，修改操作的语句。关键字delete,insert,update
     数据控制语言：用于定义数据库的访问权限和安全级别。 关键字grant revoke
 # pymysql
-  
+# scrapy
+  创建爬虫文件
+    scrapy startproject 项目名称
+  进入项目
+   cd项目名称
+  创建爬虫文件
+    scrapy genspider 名字 域名
+  修改start_urls成你想要爬取的页面
+  对数据进行解析，在spider中的parse(response)中进行改写
+    def parse(self, response):
+      response.text获取网页源代码
+      response.xpath()
+      response.class()
+      等等获取想要的数据
+      xpath默认返回的是selector对象
+            想要返回需要#extract()返回列表，extract_first() 返回一个数据，如果没有，返回None
+  创建一个字典保存数据，用yield将字典返回给pipelines，进行持久化存储
+  在pipelines中，进行数据存储
+      class GamePipeline:#随意定义一个类
+      def process_item(self, item, spider):  #处理数据的专用方法  item数据 spider爬虫
+          return item#必须返回一个数据，否则下一个管道拿不到数据
+  在settings中将管道打开
+    ITEM_PIPELINES = {
+   "game.pipelines.GamePipeline": 300,
+    '管道的路径':优先级,优先级数越小，优先级越高
+    }
+  运行爬虫
+    scrapy crawl 爬虫名字
