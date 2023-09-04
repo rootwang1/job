@@ -80,3 +80,5 @@
     }
   运行爬虫
     scrapy crawl 爬虫名字
+# scrapy_splash
+  安装尽量在linux中,
